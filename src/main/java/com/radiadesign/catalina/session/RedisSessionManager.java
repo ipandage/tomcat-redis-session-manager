@@ -393,6 +393,8 @@ public class RedisSessionManager extends ManagerBase implements Lifecycle {
 
       RedisSession redisSession = (RedisSession) session;
 
+      ((RedisSession) session).removeAttribute("net.tatabang.template.directive.FlashMessageDirectiveNew.FLASH_MESSAGE");
+      
       if (log.isLoggable(Level.FINE)) {
         log.fine("Session Contents [" + redisSession.getId() + "]:");
         for (Object name : Collections.list(redisSession.getAttributeNames())) {
